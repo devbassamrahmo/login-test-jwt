@@ -29,7 +29,9 @@ app.use((req, res, next) => {
     next();
   });
 
-
+app.get('/' , (req,res) =>{
+    res.send("<h1>welcome to my page</h1>")
+})
 
 app.get("/free-endpoint", (request, response) => {
     response.json({ message: "You are free to access me anytime" });
