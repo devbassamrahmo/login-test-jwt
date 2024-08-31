@@ -8,10 +8,8 @@ app.use('/user',userRouter)
 const authanticate = require('./middleware/authUser')
 
 mongoose.connect(process.env.DB_URL).then((result) =>{
-    app.listen(process.env.PORT, () => {
-        console.log(`server is running on port ${process.env.PORT}`)
-    })
     
+    console.log("server is connected to db")
 }).catch((err) =>{
     console.log(err)
 })
@@ -49,3 +47,6 @@ app.get("/free-endpoint", (request, response) => {
 
 
 
+  app.listen(process.env.PORT, () => {
+    console.log(`server is running on port ${process.env.PORT}`)
+})
